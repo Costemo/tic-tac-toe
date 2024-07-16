@@ -3,14 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><Tic-Tac-Toe></Tic-Tac-Toe></title>
+    <title>Tic-Tac-Toe</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <h1>Tic-Tac-Toe</h1>
+
+    <div id="setup">
+        <div>
+            <label for="player1Name">Player 1 Name</label>
+            <input type="text" id="player1Name">
+        </div>
+        <div>
+            <label for="player1Symbol">Player 1 Symbol</label>
+            <select id="player1Symbol">
+                <option value="X">X</option>
+                <option value="O">O</option>
+            </select>
+        </div>
+        <div>
+            <label for="player2Name">Player 2 Name</label>
+            <input type="text" id="player2Name">
+        </div>
+        <div>
+            <label for="player2Symbol">Player 2 Symbol</label>
+            <select id="player2Symbol">
+                <option value="X">X</option>
+                <option value="O">O</option>
+            </select>
+        </div>
+        <button id="startGame">Start Game</button>
+    </div>
+
+    <div class="board" style="display:none;">
+        <div class="cell" data-index=""></div>
+        <div class="cell" data-index=""></div>
+        <div class="cell" data-index=""></div>
+        <div class="cell" data-index=""></div>
+        <div class="cell" data-index=""></div>
+        <div class="cell" data-index=""></div>
+        <div class="cell" data-index=""></div>
+        <div class="cell" data-index=""></div>
+        <div class="cell" data-index=""></div>
+    </div>
+
+    <p id="status"></p>
+    <button id="reset" style="display:none;">reset</button>
+
     
-
-
-
 
     <script src="script.js"></script>
 </body>
