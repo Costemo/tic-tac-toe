@@ -11,4 +11,8 @@
     justify-content: center;
     width: 100px;
     height: 100px;
+    background-color: #eee;
+    font-size: 2em;
+    cursor: pointer;
+    color: red;
 }   
