@@ -29,6 +29,8 @@
         for (let condition of winningConditions) {
             const [a, b, c] = condition;
             if (board[a] && board[a] === board[b] && board[a] === board[c]) {
+                const winnerName = currentPlayer === players.player1.symbol ? players.player1.name : players.player2.name;
+                console.log(`Player ${winnerName} wins!`);
                 statusText.textContent = `Player ${currentPlayer === players.player1.symbol ? players.player1.name : players.player2.name} wins!`;
                 isGameActive = false;
                 return;

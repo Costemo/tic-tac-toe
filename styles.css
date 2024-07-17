@@ -1,8 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
+
+html, body {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(135deg, rgb(35, 35, 37), rgb(28, 49, 105));
+    font-family: 'Orbitron', sans-serif;
+    margin: 0;
+
+}
+
+h1 {
+    color: white;
+    font-size: 70px;
+    margin-bottom: 20px;
+}
+
 .board {
     display: grid;
     grid-template-columns: repeat(3, 100px);
     grid-template-rows: repeat(3, 100px);
     gap: 5px;
+    
 }
 
 .cell {
@@ -12,7 +35,81 @@
     width: 100px;
     height: 100px;
     background-color: #eee;
-    font-size: 2em;
+    font-size: 5em;
     cursor: pointer;
     color: red;
 }   
+
+.player-card {
+    background: rgba(255, 255, 255, 0.25); /* translucent white background */
+    backdrop-filter: blur(10px); /* backdrop-filter for blurring effect */
+    border-radius: 10px; /* rounded corners */
+    padding: 30px;
+    margin-bottom: 30px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.player-card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 2px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+input {
+    width: 250px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: rgb(87, 85, 85);
+}
+select {
+    background-color: rgb(87, 85, 85);
+    color: white;
+    width: 50px;
+    height: 30px;
+    text-align: center;
+}
+#setup {
+    display: flex;
+    flex-direction: column;
+}
+#startGame {
+    height: 100px;
+    border-radius: 10px;
+    color: white;
+    font-size: 50px;
+    font-family: 'Orbitron';
+    font-weight: bold;
+    
+    background: rgba(122, 233, 150, 0.521); /* translucent white background */
+    backdrop-filter: blur(10px); /* backdrop-filter for blurring effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+#status {
+    color: white;
+    font-size: 40px;
+}
+#reset {
+    height: 100px;
+    width: 300px;
+    border-radius: 10px;
+    color: white;
+    font-size: 50px;
+    font-family: 'Orbitron';
+    font-weight: bold;
+    margin-top: 0;
+    
+    background: rgba(122, 233, 150, 0.521); /* translucent white background */
+    backdrop-filter: blur(10px); /* backdrop-filter for blurring effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
