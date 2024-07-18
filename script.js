@@ -60,6 +60,15 @@
     }
 
     function resetGame() {
+        cells.forEach(cell => {
+            cell.classList.add('fade-out');
+            setTimeout(() => {
+                cell.classList.remove('fade-out');
+                cell.textContent = '';
+            }, 500);
+        });
+
+
         board = ['','','','','','','','',''];
         currentPlayer = players.player1.symbol;
         isGameActive = true;

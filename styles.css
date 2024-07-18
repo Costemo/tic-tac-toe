@@ -39,6 +39,7 @@ h1 {
     font-size: 5em;
     cursor: pointer;
     color: red;
+    transition: transform 0.3s ease;
 }   
 
 .player-card {
@@ -128,6 +129,10 @@ select {
     border-radius: 50px;
 }
 
+.fade-out {
+    animation: fadeOut 0.5s ease forwards;
+}
+
 @keyframes pop {
     0% {
         transform: scale(0);
@@ -136,5 +141,16 @@ select {
     100% {
         transform: scale(1);
         opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0);
     }
 }
