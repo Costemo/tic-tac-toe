@@ -84,13 +84,14 @@
             }, 500);
         });
 
-
+        statusText.style.display = 'block';
         board = ['','','','','','','','',''];
         currentPlayer = players.player1.symbol;
         isGameActive = true;
         cells.forEach(cell => {cell.textContent = ''; cell.classList.remove('played')});
         statusText.textContent = `It's ${players.player1.name}'s turn`;
         boardSelection.style.display = 'grid';
+        
         resetButton.style.display = 'block';
         setupButton.style.display = 'block';
         setupSelection.style.display = 'none';
