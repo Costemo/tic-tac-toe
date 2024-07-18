@@ -3,7 +3,7 @@
 
 html, body {
     display: flex;
-    justify-content: start;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
     height: 100%;
@@ -16,7 +16,7 @@ html, body {
 
 h1 {
     color: white;
-    font-size: 70px;
+    font-size: 60px;
     margin-bottom: 20px;
 }
 
@@ -29,6 +29,7 @@ h1 {
 }
 
 .cell {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -87,7 +88,7 @@ select {
     height: 100px;
     border-radius: 10px;
     color: white;
-    font-size: 50px;
+    font-size: 40px;
     font-family: 'Orbitron';
     font-weight: bold;
     
@@ -112,4 +113,28 @@ select {
     background: rgba(122, 233, 150, 0.521); /* translucent white background */
     backdrop-filter: blur(10px); /* backdrop-filter for blurring effect */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.cell.played::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(69, 8, 71, 0.342);
+    animation: pop 0.3s ease-in backwards;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    border-radius: 50px;
+}
+
+@keyframes pop {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
 }

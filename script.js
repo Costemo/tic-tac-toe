@@ -52,6 +52,7 @@
 
         board[index] = currentPlayer;
         cell.textContent = currentPlayer;
+        cell.classList.add('played');
         checkWiner();
 
         currentPlayer = currentPlayer === players.player1.symbol ? players.player2.symbol : players.player1.symbol;
@@ -62,7 +63,7 @@
         board = ['','','','','','','','',''];
         currentPlayer = players.player1.symbol;
         isGameActive = true;
-        cells.forEach(cell => cell.textContent = '');
+        cells.forEach(cell => {cell.textContent = ''; cell.classList.remove('played')});
         statusText.textContent = `It's ${players.player1.name}'s turn`;
         boardSelection.style.display = 'grid';
         resetButton.style.display = 'block';
