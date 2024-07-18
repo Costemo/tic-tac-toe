@@ -154,3 +154,22 @@ select {
         transform: scale(0);
     }
 }
+
+.winning-cell {
+    /* Adjust the styling to visually indicate the winning cells */
+    background-color: rgba(255, 0, 0, 0.349); /* Example: Red border for winning cells */
+}
+
+@keyframes rainbow {
+    0% { color: #ff0000; filter: hue-rotate(0deg); }
+    16.66% { color: #ff7f00; filter: hue-rotate(60deg); }
+    33.33% { color: #ffff00; filter: hue-rotate(120deg); }
+    50% { color: #00ff00; filter: hue-rotate(180deg); }
+    66.66% { color: #0000ff; filter: hue-rotate(240deg); }
+    83.33% { color: #8b00ff; filter: hue-rotate(300deg); }
+    100% { color: #ff0000; filter: hue-rotate(360deg); }
+}
+
+.rainbow-text {
+    animation: rainbow 0.5s linear infinite;
+}

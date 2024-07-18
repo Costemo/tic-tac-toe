@@ -31,14 +31,25 @@
             if (board[a] && board[a] === board[b] && board[a] === board[c]) {
                 const winnerName = currentPlayer === players.player1.symbol ? players.player1.name : players.player2.name;
                 console.log(`Player ${winnerName} wins!`);
-                statusText.textContent = `Player ${currentPlayer === players.player1.symbol ? players.player1.name : players.player2.name} wins!`;
+                
                 isGameActive = false;
+                statusText.textContent = `Player ${winnerName} wins!`;
+
+                const rainbowText = document.getElementById('rainbow-text');
+                rainbowText.classList.add('rainbow-text');
+
+                cells[a].classList.add('winning-cell');
+                cells[b].classList.add('winning-cell');
+                cells[c].classList.add('winning-cell');
+
                 return;
             }
         }
         if (!board.includes('')) {
             statusText.textContent = 'Draw!'
             isGameActive = false;
+        } else {
+            statusText.textContent = `It's ${currentPlayer === players.player1.symbol ? players.player1.name : players.player2.name}'s turn`;
         }
     }
 
@@ -51,19 +62,23 @@
         }
 
         board[index] = currentPlayer;
+        checkWiner();
         cell.textContent = currentPlayer;
         cell.classList.add('played');
-        checkWiner();
+        // checkWiner();
 
         currentPlayer = currentPlayer === players.player1.symbol ? players.player2.symbol : players.player1.symbol;
         statusText.textContent = `It's ${currentPlayer === players.player1.symbol ? players.player1.name : players.player2.name}'s turn`;
     }
 
     function resetGame() {
+        const rainbowText = document.getElementById('rainbow-text');
         cells.forEach(cell => {
             cell.classList.add('fade-out');
             setTimeout(() => {
                 cell.classList.remove('fade-out');
+                cell.classList.remove('winning-cell');
+                rainbowText.classList.remove('rainbow-text');
                 cell.textContent = '';
             }, 500);
         });
