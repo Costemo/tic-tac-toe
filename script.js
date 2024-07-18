@@ -5,6 +5,7 @@
     const cells = document.querySelectorAll(".cell");
     const statusText = document.querySelector("#status");
     const resetButton = document.querySelector("#reset");
+    const setupButton = document.querySelector("#setup-btn");
 
     let currentPlayer = "X";
     let board = ['','','','','','','','',''];
@@ -91,6 +92,7 @@
         statusText.textContent = `It's ${players.player1.name}'s turn`;
         boardSelection.style.display = 'grid';
         resetButton.style.display = 'block';
+        setupButton.style.display = 'block';
         setupSelection.style.display = 'none';
     }
 
@@ -112,6 +114,17 @@
         }
     }
 
+    function setupButtonClick() {
+        setupSelection.style.display = 'block';
+        boardSelection.style.display = 'none';
+        setupButton.style.display = 'none';
+        resetButton.style.display = 'none';
+        statusText.style.display = 'none';
+        startGameButton.style.display = 'block'
+    }
+
+    
+    setupButton.addEventListener('click', setupButtonClick);
     startGameButton.addEventListener('click', startGame);
     cells.forEach(cell => cell.addEventListener('click', handleCellClick));
     resetButton.addEventListener('click', resetGame);
