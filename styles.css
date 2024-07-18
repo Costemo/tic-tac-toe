@@ -111,6 +111,7 @@ select {
     font-family: 'Orbitron';
     font-weight: bold;
     margin-top: 0;
+    text-align: center;
     
     background: rgba(122, 233, 150, 0.521); /* translucent white background */
     backdrop-filter: blur(10px); /* backdrop-filter for blurring effect */
